@@ -114,11 +114,7 @@
         }
         options = options || {};
         return this.each(function(){
-            var setting = $.data(this, pluginName);
-
-            if (setting) {
-                setting = $.extend(setting, options);
-            } else {
+         
                 var opts = $.extend({}, $.fn[pluginName].defaults, options);
 
                 opts.curPage = opts.pageIndex;
@@ -127,7 +123,6 @@
                 $.data(this, pluginName, opts);
 
                 Temp.init($(this));
-            }
         });
     }
     $.fn[pluginName].methods = {
